@@ -1,5 +1,6 @@
 package com.aula;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,7 +11,7 @@ import java.time.LocalDateTime;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class PessoaTeste 
 {
     /**
      * Rigorous Test :-)
@@ -25,5 +26,11 @@ public class AppTest
     void deveCalcularIdadeCorretamente(){
        Pessoa p1 = new Pessoa("Pedro", LocalDateTime.of(2000,5, 21, 15 , 0 ,0)); 
        assertEquals(24, p1.getIdade());
+    }
+
+    @Test
+    void verificaSeEhMaiorIdade(){
+       Pessoa p1 = new Pessoa("Tiago", LocalDateTime.of(1999,5, 21, 15 , 0 ,0)); 
+       Assertions.assertTrue(p1.ehMaiorDeIdade());
     }
 }
